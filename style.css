@@ -14,8 +14,13 @@ body{
 }
 
 header{
+    padding-top: 180px;
     
     border-bottom: 1px solid rgb(19, 43, 45);
+    background:linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba( 0,0,0,0.8)50%),url(banners/ko.jpg);
+   background-position: left ;
+   background-size:cover ;
+   background-repeat:no-repeat ;
 }
 header h1,p{
 color: white;
