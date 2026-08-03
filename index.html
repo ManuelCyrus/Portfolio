@@ -3,110 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manuel Cyrus — Software Developer. Personal portfolio.">
+    <title>Manuel Cyrus — Software Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Manuel Cyrus </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-18px); }
+        }
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(6deg); }
+        }
+        @keyframes float-delay {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(14px); }
+        }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes blob-move {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -40px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .4; }
+        }
 
-       <!-- icon -->
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <!-- icon -->
-        
+        .float-main { animation: float 5s ease-in-out infinite; }
+        .float-badge-1 { animation: float-slow 4s ease-in-out infinite; }
+        .float-badge-2 { animation: float-delay 4.5s ease-in-out infinite; animation-delay: .3s; }
+        .float-badge-3 { animation: float-slow 3.5s ease-in-out infinite; animation-delay: .6s; }
+        .float-badge-4 { animation: float-delay 5s ease-in-out infinite; animation-delay: .5s; }
+        .spin-ring { animation: spin-slow 14s linear infinite; }
+        .blob-a { animation: blob-move 9s ease-in-out infinite; }
+        .blob-b { animation: blob-move 11s ease-in-out infinite reverse; }
+        .fade-up { animation: fade-up .8s ease-out both; }
+        .fade-up-1 { animation-delay: .1s; }
+        .fade-up-2 { animation-delay: .25s; }
+        .fade-up-3 { animation-delay: .4s; }
+        .fade-up-4 { animation-delay: .55s; }
+        .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+        .bg-grid {
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.045) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.045) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .float-main, .float-badge-1, .float-badge-2, .float-badge-3, .float-badge-4,
+            .spin-ring, .blob-a, .blob-b, .fade-up, .pulse-dot {
+                animation: none !important;
+            }
+        }
+    </style>
 </head>
-
-
-
-
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-[#FBF8F1] text-stone-900 font-sans antialiased">
 
     <!-- HEADER -->
-<header class="bg-gray-800 shadow-lg">
-    <nav class="container mx-auto flex justify-between items-center p-5">
-        <div class="text-3xl font-bold">Manuel<span class="text-orange-500">Cyrus</span></div>
-        <div class="hidden md:flex gap-6 text-lg">
-            <a href="https://github.com/ManuelCyrus" target="_blank" class="hover:text-orange-500"><i class="fa fa-github"></i>&nbsp; GitHub</a>
-            <a href="https://www.instagram.com/cyrus3k/" target="_blank" class="hover:text-pink-500"><i class="fa fa-instagram"></i>&nbsp; Instagram</a>
-            <a href="https://www.linkedin.com/in/manuel-fulama%F0%9F%87%A6%F0%9F%87%B4%F0%9F%87%A9%F0%9F%87%AA%F0%9F%87%BA%F0%9F%87%B8-3a84132b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="hover:text-blue-500"><i class="fa fa-linkedin"></i>&nbsp; LinkedIn</a>
-            <a href="https://twitter.com/manuelcyrus_" target="_blank" class="hover:text-blue-400"><i class="fa fa-twitter"></i>&nbsp; Twitter</a>
+    <header class="bg-[#FBF8F1]/90 backdrop-blur sticky top-0 z-50 border-b border-stone-200">
+        <nav class="container mx-auto flex justify-between items-center px-6 py-4">
+            <a href="#top" class="text-2xl font-bold tracking-tight text-stone-900">Manuel<span class="text-orange-500">Cyrus</span></a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+                <a href="#about" class="hover:text-stone-900 transition">About</a>
+                <a href="#skills" class="hover:text-stone-900 transition">Skills</a>
+                <a href="#contact" class="hover:text-stone-900 transition">Contact</a>
+            </div>
+            <div class="flex items-center gap-5 text-lg text-stone-500">
+                <a href="https://github.com/ManuelCyrus" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-stone-900 transition"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/manuel-fulama-3a84132b6" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-blue-600 transition"><i class="fa fa-linkedin"></i></a>
+                <a href="https://x.com/manuelcyrus_" target="_blank" rel="noopener" aria-label="Twitter" class="hover:text-blue-500 transition"><i class="fa fa-twitter"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="top" class="relative overflow-hidden">
+        <!-- background layer -->
+        <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-orange-300/30 rounded-full blur-3xl blob-a pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-16 w-[28rem] h-[28rem] bg-pink-300/20 rounded-full blur-3xl blob-b pointer-events-none"></div>
+
+        <div class="relative container mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-16 px-6 py-28 md:py-32">
+            <div class="text-center md:text-left max-w-xl">
+                
+
+                <h1 class="fade-up fade-up-2 text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-stone-900">
+                    Turning <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">ideas</span>
+                    into software that works.
+                </h1>
+
+                <p class="fade-up fade-up-3 mt-6 text-stone-600 text-lg">
+                    I build web and mobile applications with a focus on quality, performance and clean code.
+                    Currently a software developer at <span class="text-stone-900 font-semibold">CodifyWorld</span>.
+                </p>
+
+                <div class="fade-up fade-up-4 mt-9 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="bg-orange-500 text-white px-8 py-3 rounded-lg text-base font-semibold hover:bg-orange-600 transition text-center shadow-lg shadow-orange-500/20">
+                        Let's work together
+                    </a>
+                    <a href="https://github.com/ManuelCyrus" target="_blank" rel="noopener" class="border border-stone-300 text-gray-700 px-8 py-3 rounded-lg text-base font-semibold hover:border-orange-500 hover:text-orange-600 transition text-center bg-white">
+                        View GitHub
+                    </a>
+                </div>
+
+                <div class="fade-up fade-up-4 mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto md:mx-0">
+                    <div class="text-center md:text-left">
+                        <p class="text-3xl font-bold text-orange-500">4+</p>
+                        <p class="text-stone-500 text-xs mt-1">Years experience</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-3xl font-bold text-orange-500">10+</p>
+                        <p class="text-stone-500 text-xs mt-1">Technologies</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-3xl font-bold text-orange-500">1</p>
+                        <p class="text-stone-500 text-xs mt-1">Current company</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative w-64 h-64 md:w-80 md:h-80 shrink-0">
+                <!-- rotating dashed ring -->
+                <svg class="spin-ring absolute inset-0 w-full h-full text-orange-400/50" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="47" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 8"/>
+                </svg>
+
+                <!-- glow -->
+                <div class="absolute inset-4 rounded-full bg-orange-300/30 blur-2xl"></div>
+
+                <img src="img/cyrus.jpeg" alt="Photo of Manuel Cyrus"
+                     class="float-main absolute inset-4 z-10 w-[calc(100%-2rem)] h-[calc(100%-2rem)] object-cover rounded-full shadow-2xl border-4 border-white ring-2 ring-orange-400/50">
+
+                <!-- floating tech badges -->
+                <img src="img/react.png" alt="React" title="React"
+                     class="float-badge-1 absolute -top-3 -right-2 w-14 h-14 p-2.5 bg-white rounded-full shadow-lg border border-stone-200 object-contain z-20">
+                <img src="img/nodejs.png" alt="Node.js" title="Node.js"
+                     class="float-badge-2 absolute top-1/3 -left-8 w-12 h-12 p-2 bg-white rounded-full shadow-lg border border-stone-200 object-contain z-20">
+                <img src="img/tailwind.png" alt="Tailwind CSS" title="Tailwind CSS"
+                     class="float-badge-3 absolute -bottom-2 right-2 w-12 h-12 p-2 bg-white rounded-full shadow-lg border border-stone-200 object-contain z-20">
+                <img src="img/php.svg" alt="PHP" title="PHP"
+                     class="float-badge-4 absolute bottom-6 -left-4 w-11 h-11 p-2 bg-white rounded-full shadow-lg border border-stone-200 object-contain z-20">
+            </div>
         </div>
-    </nav>
-</header>
 
-<!-- HERO SECTION -->
-<section class="flex flex-col-reverse md:flex-row items-center justify-center gap-12 py-20 px-6">
-    <div class="text-center md:text-left max-w-xl">
-        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
-            Transforming <span class="text-orange-500">ideas</span> into impactful software.
-        </h1>
-        <p class="mt-4 text-gray-300 text-lg">Building innovative applications with creativity, technology, and passion for problem-solving.</p>
-        <a href="https://www.instagram.com/cyrus3k/" class="inline-block mt-8 bg-orange-500 text-white px-8 py-3 rounded-lg text-lg hover:bg-orange-600 transition">Let's work together</a>
-    </div>
-    <img src="img/pessoa_lua.png" alt="Profile picture" class="w-1/2 md:w-1/3 rounded-xl shadow-lg p-4 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 rounded-full inline-block shadow-lg">
-</section>
+        <!-- scroll cue -->
+        <a href="#skills" aria-label="Scroll to skills" class="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 text-stone-400 hover:text-orange-500 transition flex-col items-center gap-1">
+            <span class="text-[11px] uppercase tracking-widest">Scroll</span>
+            <i class="fa fa-chevron-down animate-bounce"></i>
+        </a>
+    </section>
 
-
-<section class="flex flex-col md:flex-row items-center justify-center gap-12 py-16 px-6">
-    
-    <img src="img/pessoa_lua.png" alt="Profile picture" 
-         class="w-48 h-48 object-cover rounded-full shadow-lg hover:scale-105 transition duration-300">
-
-
-    <div class="text-center md:text-left max-w-lg">
-        <h1 class="text-5xl font-bold">The limit <span class="text-orange-500">does not exist</span></h1>
-        <p class="mt-4 text-gray-300">Innovation and creativity are the engines of the future. Always seeking solutions that make a difference in the world.</p>
-        <button class="bg-orange-500 text-white px-6 py-3 mt-6 rounded-lg text-lg hover:bg-orange-600">Manuel Cyrus</button>
-    </div>
-</section>
-
-<section class="py-12 bg-[#fff]-200">
-    <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold text-orange-500">Technologies</h2>
-        <div class="flex flex-wrap justify-center gap-6 mt-6">
-            <img src="img/html.png" alt="HTML" class="w-20">
-            <img src="img/css.webp" alt="CSS" class="w-20">
-            <img src="img/tailwind.png" alt="Tailwind" class="w-20">
-            <img src="img/nodejs.png" alt="JavaScript" class="w-20">
-            <img src="img/react-native-.svg" alt="Ajax" class="w-20">
-            <img src="img/react.png" alt="Ajax" class="w-20">
-            <img src="img/express.png" alt="JavaScript" class="w-20">
-            <img src="img/json.png" alt="" class="w-20">
-            <img src="img/php.svg" alt="" class="w-20">
-            <img src="img/laravel.png" alt="" class="w-20">
-            <img src="img/AJAXsvg.png" alt="Ajax" class="w-20">
-            <img src="img/mysql.svg" alt="Ajax" class="w-20">
-            <img src="img/mongodb.webp" alt="Ajax" class="w-20">
+    <!-- TECHNOLOGIES -->
+    <section id="skills" class="py-16 bg-white border-y border-stone-200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-stone-900">Skills &amp; Technologies</h2>
+            <p class="text-stone-500 mt-2">Tools and languages I work with every day</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 mt-10">
+                <img src="img/html.png" alt="HTML" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="HTML">
+                <img src="img/css.webp" alt="CSS" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="CSS">
+                <img src="img/tailwind.png" alt="Tailwind CSS" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="Tailwind CSS">
+                <img src="img/nodejs.png" alt="Node.js" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="Node.js">
+                <img src="img/react.png" alt="React" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="React">
+                <img src="img/react-native-.svg" alt="React Native" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="React Native">
+                <img src="img/express.png" alt="Express" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="Express">
+                <img src="img/json.png" alt="JSON" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="JSON">
+                <img src="img/php.svg" alt="PHP" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="PHP">
+                <img src="img/laravel.png" alt="Laravel" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="Laravel">
+                <img src="img/AJAXsvg.png" alt="AJAX" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="AJAX">
+                <img src="img/mysql.svg" alt="MySQL" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="MySQL">
+                <img src="img/mongodb.webp" alt="MongoDB" class="w-14 h-14 object-contain opacity-90 hover:opacity-100 transition" title="MongoDB">
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="py-16 px-6 bg-gray-800">
-    <div class="container mx-auto grid md:grid-cols-2 gap-8">
-        <div>
-            <h2 class="text-orange-500 text-2xl font-semibold">About me</h2>
-            <h1 class="text-3xl font-bold mt-2">Software developer passionate about creating innovative applications.</h1>
-            <p class="text-gray-300 mt-4">With over 4 years of experience in web and mobile development, always seeking continuous learning and growth.</p>
-            <p class="text-gray-300 mt-2">Currently working at <span class="text-orange-500 font-bold">CodifyWorld</span> as a software developer.</p>
-            <p class="text-orange-500 text-4xl font-bold mt-6">4+</p>
-            <p class="text-gray-300">Years of experience in the industry</p>
+    <!-- ABOUT + CONTACT -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12">
+            <div class="flex flex-col sm:flex-row gap-8 items-start">
+                <img src="img/pessoa_lua.png" alt="Illustration of Manuel Cyrus"
+                     class="hidden sm:block w-32 h-32 md:w-40 md:h-40 object-cover rounded-2xl shadow-md border border-stone-200 shrink-0">
+                <div>
+                    <h2 class="text-orange-500 text-sm font-semibold uppercase tracking-wide">About me</h2>
+                    <h3 class="text-3xl font-bold mt-2 leading-snug text-stone-900">
+                        Software developer passionate about building innovative applications.
+                    </h3>
+                    <p class="text-stone-600 mt-4">
+                        Over 4 years of experience in web and mobile development, always looking for
+                        continuous learning and new technical challenges.
+                    </p>
+                    <p class="text-stone-600 mt-2">
+                        Currently at <span class="text-orange-500 font-semibold">CodifyWorld</span>, as a software developer.
+                    </p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <p class="text-orange-500 text-4xl font-bold">4+</p>
+                        <p class="text-stone-500 text-sm leading-tight">Years of<br>experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contact" class="bg-white rounded-xl p-8 border border-stone-200 shadow-sm">
+                <h3 class="text-2xl font-bold text-stone-900">Let's talk</h3>
+                <p class="text-stone-500 mt-2">Have a project in mind or just want to chat? Reach out.</p>
+                <a href="mailto:manuelcyrus.mda@gmail.com" class="mt-6 inline-flex items-center gap-3 text-orange-500 text-lg font-medium hover:text-orange-600 transition">
+                    <i class="fa fa-envelope"></i> manuelcyrus.mda@gmail.com
+                </a>
+                <div class="flex gap-5 mt-8 text-xl text-stone-500">
+                    <a href="https://github.com/ManuelCyrus" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-stone-900 transition"><i class="fa fa-github"></i></a>
+                    <a href="https://www.instagram.com/cyrus3k/" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-pink-500 transition"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/manuel-fulama-3a84132b6" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-blue-600 transition"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://x.com/manuelcyrus_" target="_blank" rel="noopener" aria-label="Twitter" class="hover:text-blue-500 transition"><i class="fa fa-twitter"></i></a>
+                </div>
+            </div>
         </div>
-        <div>
-            <h1 class="text-2xl font-bold">Get in touch</h1>
-            <p class="text-gray-400 mt-4">Email:</p>
-            <span class="text-orange-500 text-lg">manuelcyrus.mda@gmail.com</span>
-        </div>
-    </div>
-</section>
+    </section>
 
-
-<footer class="bg-gray-900 text-center py-8">
-    <h2 class="text-xl font-semibold text-orange-500 mb-4">Connect with me</h2>
-    <div class="flex justify-center gap-6 text-2xl">
-        <a href="https://www.instagram.com/cyrus3k/" target="_blank" class="hover:text-pink-500"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/manuel-fulama%F0%9F%87%A6%F0%9F%87%B4%F0%9F%87%A9%F0%9F%87%AA%F0%9F%87%BA%F0%9F%87%B8-3a84132b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="hover:text-blue-500"><i class="fa fa-linkedin"></i></a>
-        <a href="https://x.com/manuelcyrus_" target="_blank" class="hover:text-blue-400"><i class="fa fa-twitter"></i></a>
-        <a href="https://github.com/ManuelCyrus" target="_blank" class="hover:text-gray-400"><i class="fa fa-github"></i></a>
-    </div>
-    <p class="text-gray-500 text-sm mt-4">&copy; 2025 Manuel Cyrus. All rights reserved.</p>
-</footer>
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-stone-200 text-center py-8">
+        <p class="text-stone-500 text-sm">&copy; 2026 Manuel Cyrus. All rights reserved.</p>
+    </footer>
 
 </body>
-
 </html>
